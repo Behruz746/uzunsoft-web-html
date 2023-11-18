@@ -1,0 +1,44 @@
+.header__nav {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    a {
+        padding: 10px;
+        font-family: 'Euclid Circular A', sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 24px;
+        color: $DarkBlue;
+        position: relative;
+        overflow: hidden;
+        outline: 0;
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            width: 0;
+            left: 50%;
+            height: 2px;
+            transform: translateX(-50%);
+            background-color: $green;
+            transition: .2s linear;
+        }
+
+        &:hover {
+            &::before {
+                width: 100% - 20%;
+            }
+        }
+    }
+    // Active page
+    .nav__link--active {
+        &::before {
+            width: 100% - 20%;
+        }
+    }
+}
+
+

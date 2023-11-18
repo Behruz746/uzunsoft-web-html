@@ -1,0 +1,238 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+@import url("https://fonts.cdnfonts.com/css/euclid-circular-a?styles=100037,100034,100036,100039,100031");
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+body {
+  background-color: #fff;
+  font-family: "Euclid Circular A", sans-serif;
+}
+
+.main {
+  overflow: hidden;
+}
+
+::-moz-selection {
+  background-color: #b3d4fc;
+}
+
+::selection {
+  background-color: #b3d4fc;
+}
+
+::-moz-selection {
+  background: #b3d4fc;
+}
+
+.container {
+  max-width: 1290px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.coming__soon {
+  width: 100%;
+  background-color: #25AE7A;
+}
+.coming__soon .coming__soon__inner {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  width: 1290px;
+  margin: 0 auto;
+  transform: translateX(0px);
+}
+.coming__soon .coming__soon__item {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  padding: 5px;
+}
+.coming__soon .coming__soon__item h2 {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: #fff;
+}
+
+.footer {
+  width: 100%;
+  background-color: #eceff0;
+}
+.footer__content {
+  padding: 20px 0;
+  width: 100%;
+}
+.footer__content h1 {
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px; /* 228.571% */
+  color: #073042;
+}
+
+.header {
+  max-width: 1750px;
+  width: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+}
+.header::after {
+  content: "";
+  position: absolute;
+  right: -30px;
+  top: 0;
+  background-color: rgb(223, 252, 239);
+  width: 800px;
+  height: 900px;
+  z-index: -5;
+}
+.header__body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__logo {
+  width: 168px;
+  flex-shrink: 0;
+}
+.header__logo img {
+  width: 100%;
+  height: auto;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.header__nav a {
+  padding: 10px;
+  font-family: "Euclid Circular A", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  color: #073042;
+  position: relative;
+  overflow: hidden;
+  outline: 0;
+}
+.header__nav a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  left: 50%;
+  height: 2px;
+  transform: translateX(-50%);
+  background-color: #25AE7A;
+  transition: 0.2s linear;
+}
+.header__nav a:hover::before {
+  width: 80%;
+}
+.header__nav .nav__link--active::before {
+  width: 80%;
+}
+
+.info {
+  max-width: 1750px;
+  width: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+}
+.info::after {
+  content: "";
+  position: absolute;
+  right: -30px;
+  top: 0;
+  background-color: rgb(223, 252, 239);
+  width: 800px;
+  height: 900px;
+  z-index: -5;
+}
+.info__body {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+}
+.info__content {
+  max-width: 639px;
+  width: 100%;
+}
+.info__animation {
+  display: flex;
+  flex-direction: column;
+  height: 90px;
+  overflow: hidden;
+}
+.info__animation h1 {
+  color: #25AE7A;
+}
+.info__title {
+  font-size: 88px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 88px;
+}
+.info__image {
+  max-width: 825px;
+  width: 100%;
+  position: relative;
+}
+.info__image .info__desktop__image {
+  width: 800px;
+  position: relative;
+  z-index: 2;
+}
+.info__image .info__image__screen {
+  position: absolute;
+  top: 10.9%;
+  left: 15.35%;
+  z-index: 1;
+}
+.info__title--animation {
+  transform: translateY(0px);
+}/*# sourceMappingURL=main.css.map */
