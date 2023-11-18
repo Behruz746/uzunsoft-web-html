@@ -1,0 +1,38 @@
+.btn {
+    padding: 11px 25px;
+    border-radius: 25px;
+    border: 1px solid $DarkBlue;
+    outline: 0;
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+
+    h1 {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 24px;
+        color: #060505;
+        z-index: 5;
+        position: relative;
+    }
+
+    &::after {
+        content: '';
+        width: 0px;
+        height: 100%;
+        background-color: $lightGreen;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1; 
+        transition: .4s ease-in-out;   
+    }
+    
+    &:hover {
+        &::after {
+            width: 100%;
+        }
+    }
+}
