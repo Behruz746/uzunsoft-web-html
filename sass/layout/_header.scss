@@ -4,6 +4,28 @@
     overflow: hidden;
     margin: 0 auto;
     position: relative;
+    z-index: 5;
+
+    @include mobile {
+        overflow: visible;
+        background-color: $lightGreen;
+
+        .container {
+            padding: 0;
+        }
+    }
+
+    @include desktop {
+        &::after {
+            left: 50%;
+        }
+    }
+
+    @include mobile {
+        &::after {
+            display: none;
+        }
+    }
 
     &::after {
         content: '';
@@ -12,7 +34,7 @@
         top: 0;
         background-color: $lightGreen;
         width: 800px;
-        height: 900px;
+        height: 90px;
         z-index: -5;
     }
     
@@ -20,6 +42,13 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        position: relative;
+        padding: 0 10px 0 0;
+
+        @include mobile {
+            width: 100%;
+            // border: 1px solid #d00;
+        }
     }
 
     &__logo {
@@ -29,6 +58,41 @@
         img {
             width: 100%;
             height: auto;
+        }
+
+        @include mobile {
+            display: none;
+        }
+    }
+
+    &__logo__mobile {
+        display: none;
+        max-width: 112px;
+        width: 100%;
+        height: 32px;
+        
+        @include mobile {
+            display: block;
+            margin-right: 0 auto;
+        }
+    }
+
+    &__btn {
+        display: none;
+        width: 44px;
+        height: 44px;
+
+        button {
+            width: 44px;
+            height: 44px;
+            padding: 0;
+            border: 0;
+            outline: 0;
+            background-color: transparent;
+        }
+
+        @include mobile {
+            display: block;
         }
     }
 }

@@ -2,6 +2,28 @@
     margin-top: 240px;
     width: 100%;
 
+    @include tablet {
+        margin-top: 140px !important;
+    }
+
+    @include mobile {
+        margin-top: 120px !important;
+    }
+
+    &__text {
+        text-align: left !important;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 32px; 
+        color: #000;
+    
+        @include mobile {
+            font-size: 16px !important;
+            line-height: 26px !important;
+        }
+    }
+
     &__title {
         text-align: center;
         font-size: 60px;
@@ -9,6 +31,19 @@
         font-weight: 700;
         line-height: 68px; 
         color: #000;
+
+        @include tablet {
+            font-size: 42px;
+            line-height: 42px;
+            span {
+                color: $green;
+            }
+        }
+    
+        @include mobile {
+            font-size: 32px;
+            line-height: 32px; 
+        }
     }
 }
 
@@ -18,12 +53,12 @@
     width: 100%;
     overflow: hidden;
     margin: 0 auto;
-    position: relative;
-
+    position: relative;;
+  
     &::after {
         content: '';
         position: absolute;
-        right: -30px;
+        right: -30px; 
         top: 0;
         background-color: $lightGreen;
         width: 800px;
@@ -31,10 +66,33 @@
         z-index: -5;
     }
 
+    @include desktop {
+        &::after {
+            left: 50%;
+        }
+    }
+
+    @include mobile {
+        &::after {
+            display: none;
+        }
+
+        .container {
+            padding: 0;
+        }
+    }
+
+
     &__body {
         display: flex;
         align-items: center;
         gap: 1px;
+
+        @include mobile {
+            flex-direction: column-reverse;
+            align-items: center;
+            gap: 50px;
+        }
     }
 
     &__content {
@@ -51,6 +109,14 @@
         h1 {
             color: $green;
         }
+
+        @include tablet {
+            height: 75px;
+        }
+
+        @include mobile {
+            height: 50px;
+        }
     }
 
     &__title {
@@ -58,6 +124,21 @@
         font-style: normal;
         font-weight: 700;
         line-height: 88px;
+
+        @include tablet {
+            font-size: 60px;
+            font-weight: 700;
+            line-height: 68px; 
+        }
+
+        @include mobile {
+            font-size: 40px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 44px;
+            padding: 0 10px;
+            margin-bottom: 119px;
+        }
     }
 
     &__image {
@@ -65,10 +146,27 @@
         width: 100%;
         position: relative;
 
+        @include mobile {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 18px 10px 50px;
+            background-color: $lightGreen;
+        }
+
         .info__desktop__image {
             width: 800px;
             position: relative;
             z-index: 2;
+
+            @include tablet {
+                max-width: 625px;
+            }
+
+            @include mobile {
+                max-width: 325px;
+            }
         }
 
         .info__image__screen {
@@ -76,6 +174,22 @@
             top: 10.9%;
             left: 15.35%;
             z-index: 1;
+
+            @include tablet {
+                img {
+                    max-width: 455px;
+                }
+            }
+
+            @include mobile {
+                top: 38%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+
+                img {
+                    max-width: 225px;
+                }
+            }
         }
     }
 
@@ -91,7 +205,7 @@
     width: 100%;
     overflow: hidden;
     margin: 240px auto;
-    // border: 1px solid #d00;
+    margin-bottom: 0;
 
     &__body {
         display: flex;
@@ -99,6 +213,10 @@
         align-items: center;
         gap: 120px;
         // border: 1px solid #d00;
+
+        @include tablet {
+            gap: 60px;
+        }
     }
 
     &__title {
@@ -108,6 +226,8 @@
     }
 
     &__slider__block {
+        margin: 0 auto;
+        width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -116,11 +236,18 @@
 
     &__slider {
         display: flex;
-        width: 2352px;
+        max-width: 2352px;
         align-items: center;
-        gap: 40px;
+        gap: 240px;
         justify-content: space-between;
-        margin: 0 auto;
+
+        @include tablet {
+            gap: 120px;
+        }
+
+        @include mobile {
+           gap: 60px;
+        }
     }
 
     &__slider__card {
@@ -131,6 +258,16 @@
         height: 624px;
         border-radius: 50%;
         position: relative;
+
+        img {
+            max-width: 448px;
+            width: 100%;
+            height: auto;
+
+            @include mobile {
+               max-width: 230px;
+            }
+        }
         
         &:nth-child(1) {
             background-color: $lightYellow;
@@ -140,6 +277,16 @@
         }
         &:nth-child(3) {
             background-color: $lightBlue;
+        }
+
+        @include tablet {
+            width: 524px;
+            height: 524px;
+        }
+
+        @include mobile {
+            width: 319px;
+            height: 319px;
         }
     }
 
@@ -176,6 +323,14 @@
             border-radius: 4px;
             background-color: $DarkBlue;
             transform: translateX(0%); 
+
+            @include tablet {
+                max-width: 354px;
+            }
+
+            @include mobile {
+                max-width: 232px;
+            }
         }
     }
 
@@ -253,7 +408,7 @@
             line-height: 24px; /* 150% */
             color: $DarkBlue;
             transition: .2s linear;
-
+ 
             &:hover {
                 gap: 7px;
             }
@@ -266,11 +421,21 @@
     max-width: 1750px;
     width: 100%;
     margin: 240px auto;
+    overflow: hidden;
+    margin-bottom: 0;
 
     &__body {
         display: flex;
         flex-direction: column;
         gap: 112px;
+
+        @include tablet {
+            gap: 80px;
+        }
+
+        @include mobile {
+            gap: 40px;
+        }
     }
 
     &__cantent {
@@ -280,15 +445,14 @@
         max-width: 900px;
         width: 100%;
         margin: 0 auto;
-    }
 
-    &__text {
-        text-align: center;
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 32px; 
-        color: #000;
+        p {
+            text-align: center !important;
+        }
+
+        @include mobile {
+            gap: 20px;
+        }
     }
 
     &__slider__block {
@@ -302,16 +466,46 @@
         align-items: flex-start;
         justify-content: space-between;
         gap: 48px;
+
+        @include mobile {
+            flex-direction: column;
+            align-items: center;
+        }
     }
 
     &__slider__card {
         max-width: 513px;
         width: 100%;
 
+        @include tablet {
+            max-width: 413px;
+        }
+        @include mobile {
+            max-width: 320px;
+        }
+
         .card__image {
             max-width: 513px;
             width: 100%;
             height: auto;
+            border-radius: 10px;
+            overflow: hidden;
+
+            @include tablet {
+                max-width: 413px;
+
+                img {
+                    max-width: 413px;
+                }
+            }
+
+            @include mobile {
+                max-width: 320px;
+
+                img {
+                    max-width: 320px;
+                }
+            }
         }
 
         .card__title {
@@ -321,6 +515,18 @@
             font-weight: 700;
             line-height: 32px; /* 100% */
             color: #060505;
+
+            @include tablet {
+                margin-top: 20px;
+                font-size: 25px;
+                line-height: 25px;
+            }
+
+            @include mobile {
+                margin-top: 15px;
+                font-size: 20px;
+                line-height: 20px;
+            }
         }
 
         .card__btn {
@@ -369,6 +575,11 @@
         user-select: auto;
         z-index: 1;
         transition: .2s linear;
+
+        @include mobile {
+            font-size: 16px;
+            line-height: 26px;
+        }
     }
 
      // active for services slider arrows
@@ -377,6 +588,12 @@
             path {
                 fill: $DarkBlue;
             }
+        }
+    }
+
+    .services__slider__navigation {
+        @include mobile {
+            display: none;
         }
     }
 }
@@ -399,9 +616,19 @@
     &__row {
         margin-top: 120px;
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         justify-content: space-between;
         gap: 58px;
+
+        @include tablet {
+          margin-top: 60px;
+          gap: 18px;
+        }
+
+        @include mobile {
+            flex-direction: column;
+            gap: 56px;
+        }
     }
 
     &__card {
@@ -410,6 +637,10 @@
         gap: 60px;
         max-width: 389px;
         width: 100%;
+
+        @include tablet {
+            gap: 30px;
+        }
 
         .card__image {
             display: flex;
@@ -448,12 +679,30 @@
             gap: 30px;
             flex-direction: column;
 
+            @include tablet {
+                gap: 20px;
+              }
+      
+              @include mobile {
+                gap: 10px;
+              }
+
             .card__title {
                 font-size: 40px;
                 font-style: normal;
                 font-weight: 700;
                 line-height: 44px; /* 110% */
                 color: #060505;
+
+                @include tablet {
+                    font-size: 30px;
+                    line-height: 30px;
+                  }
+          
+                  @include mobile {
+                    font-size: 20px;
+                    line-height: 20px;
+                  }
             }
             
             .card__text {
@@ -476,6 +725,10 @@
         flex-direction: column;
         align-items: center;
         gap: 120px;
+
+        @include tablet {
+            gap: 60px;
+        }
     }
 
     &__title {
@@ -489,6 +742,18 @@
             font-weight: 700;
             line-height: 44px; /* 110% */
             color: #060505;
+
+            @include tablet {
+                font-size: 30px;
+                line-height: 30px;
+              }
+      
+              @include mobile {
+                font-size: 20px;
+                line-height: 20px;
+                font-weight: 600;
+                text-align: left;
+              }
         }
     }
 
@@ -498,24 +763,38 @@
         align-items: flex-start;
         justify-content: space-between;
         gap: 48px;
+
+        @include mobile {
+            justify-content: center;
+        }
     }
 
     &__form {
         display: flex;
         flex-direction: column;
         gap: 70px;
+        padding: 0 20px;
     }
 
-    .form__box {
-        display: block;
+    .form {
         max-width: 395px;
         width: 100%;
+    }
+    
+    .form__box {
+        display: block;
         border-bottom: 1px solid $DarkBlue;
         position: relative;
         cursor: text;
 
+        
+        @include mobile {
+           width: 100%;
+        }
+
         .form__input {
-            width: 395px;
+            max-width: 395px;
+            width: 100%;
             border: 0;  
             outline: 0;
             padding-bottom: 10px;
@@ -524,9 +803,15 @@
             font-weight: 400;
             line-height: 32px;
             color: $DarkBlue;
+
+            @include mobile {
+                font-size: 16px;
+                line-height: 16px;
+            }
         }
 
         .form__label {
+            max-width: 395px;
             position: absolute;
             top: 0;
             left: 0;
@@ -536,6 +821,11 @@
             line-height: 32px;
             color: $DarkBlue;
             transition: all  0.3s ease;
+
+            @include mobile {
+                font-size: 16px;
+                line-height: 16px;
+            }
         }
 
         .form__input:focus ~ .form__label, 
@@ -556,17 +846,37 @@
         background-color: $lightGreen;
         border-radius: 50px;
 
+        @include tablet {
+            max-width: 537px;
+        }
+
+        @include mobile {
+            display: none;
+        }
+
         .info__desktop__image {
             width: 650px;
             height: auto;
+
+            @include tablet {
+                max-width: 425px;
+            }
         }
 
         .info__image__screen {
             top: 10%;
-            left: 24%;
+            left: 21%;
 
             img {
-                width: 430px !important;
+                width: 480px !important;
+            }
+
+            @include tablet {
+                top: 10%;
+                left: 18%;
+                img {
+                    max-width: 300px;
+                }
             }
         }
     }

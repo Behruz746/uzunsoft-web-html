@@ -3,6 +3,14 @@
     align-items: center;
     gap: 40px;
 
+    @include tablet {
+        gap: 20px;
+    }
+    
+    @include mobile {
+        display: none;
+    }
+
     a {
         padding: 10px;
         font-family: 'Euclid Circular A', sans-serif;
@@ -14,6 +22,10 @@
         position: relative;
         overflow: hidden;
         outline: 0;
+
+        @include tablet {
+            padding: 5px;
+        }
 
         &::before {
             content: '';
@@ -41,4 +53,36 @@
     }
 }
 
+.header__nav__mobile {
+    padding: 50px 5px 30px;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 0px 0px 25px 25px;
+    z-index: -1;
+
+    a {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 24px; 
+        color: $DarkBlue;
+    }
+
+    // active page
+    .nav__link--active {
+        background-color: $lightGreen;
+    }
+}
+
+// mobile menu active class
+.header__nav__mobile--active {
+    display: flex;
+    flex-direction: column;
+}
 

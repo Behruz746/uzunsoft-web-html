@@ -38,6 +38,10 @@ a {
     text-decoration: none;
 }
 
+html, body {
+    transition: .2s ease;
+}
+
 body {
     background-color: $white;
     font-family: 'Euclid Circular A', sans-serif;
