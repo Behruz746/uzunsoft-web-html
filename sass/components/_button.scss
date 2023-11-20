@@ -38,3 +38,57 @@
         }
     }
 }
+
+.card__btn {
+    display: flex;
+    gap: 10px;;
+    margin-top: 24px;
+    background-color: transparent;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+
+    .card__btn__text {
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 24px; /* 120% */
+        color: $DarkBlue;
+    }
+
+    img {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+.btn--nav {
+    display: block;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    background-color: transparent;
+
+    svg {
+        width: 24px;
+        height: 24px;
+
+        path {
+            fill: #F2F4F5FF;
+        }
+    }
+}
+
+.btn--prev {
+    transform: rotate(180deg) translateY(4px);
+}
+
+  // active arrow btn
+.btn__arrow--active {
+    svg {
+        path {
+            fill: $DarkBlue;
+        }
+    }
+}

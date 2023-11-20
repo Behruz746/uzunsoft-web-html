@@ -158,6 +158,91 @@ body {
   width: 100%;
 }
 
+.card__btn {
+  display: flex;
+  gap: 10px;
+  margin-top: 24px;
+  background-color: transparent;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+.card__btn .card__btn__text {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px; /* 120% */
+  color: #073042;
+}
+.card__btn img {
+  width: 24px;
+  height: 24px;
+}
+
+.btn--nav {
+  display: block;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  background-color: transparent;
+}
+.btn--nav svg {
+  width: 24px;
+  height: 24px;
+}
+.btn--nav svg path {
+  fill: #f2f4f5;
+}
+
+.btn--prev {
+  transform: rotate(180deg) translateY(4px);
+}
+
+.btn__arrow--active svg path {
+  fill: #073042;
+}
+
+.projects__slider__navigation {
+  max-width: 1280px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.projects__slider__navigation .projects__slider__line {
+  width: 100%;
+  height: 4px;
+  background-color: #f2f4f5;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.projects__slider__navigation .line {
+  max-width: 654px;
+  width: 100%;
+  height: 4px;
+  border-radius: 4px;
+  background-color: #073042;
+  transform: translateX(0%);
+}
+@media (max-width: 991px) {
+  .projects__slider__navigation .line {
+    max-width: 354px;
+  }
+}
+@media (max-width: 767px) {
+  .projects__slider__navigation .line {
+    max-width: 232px;
+  }
+}
+.projects__slider__navigation .projects__slider__arrows {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
 .footer {
   margin-top: 240px;
   width: 100%;
@@ -231,7 +316,7 @@ body {
   height: 90px;
   z-index: -5;
 }
-.header__body {
+.header__inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -239,7 +324,7 @@ body {
   padding: 0 10px 0 0;
 }
 @media (max-width: 767px) {
-  .header__body {
+  .header__inner {
     width: 100%;
   }
 }
@@ -272,10 +357,6 @@ body {
   display: none;
   width: 44px;
   height: 44px;
-}
-.header__btn button {
-  width: 44px;
-  height: 44px;
   padding: 0;
   border: 0;
   outline: 0;
@@ -287,22 +368,32 @@ body {
   }
 }
 
-.header__nav {
+.nav {
   display: flex;
   align-items: center;
+  flex-direction: row;
   gap: 40px;
 }
 @media (max-width: 991px) {
-  .header__nav {
+  .nav {
     gap: 20px;
   }
 }
 @media (max-width: 767px) {
-  .header__nav {
+  .nav {
+    flex-direction: column;
+    padding: 50px 5px 30px;
     display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 0px 0px 25px 25px;
+    z-index: -1;
   }
 }
-.header__nav a {
+.nav a {
   padding: 10px;
   font-family: "Euclid Circular A", sans-serif;
   font-size: 16px;
@@ -314,12 +405,7 @@ body {
   overflow: hidden;
   outline: 0;
 }
-@media (max-width: 991px) {
-  .header__nav a {
-    padding: 5px;
-  }
-}
-.header__nav a::before {
+.nav a::before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -330,38 +416,37 @@ body {
   background-color: #25AE7A;
   transition: 0.2s linear;
 }
-.header__nav a:hover::before {
+.nav a:hover::before {
   width: 80%;
 }
-.header__nav .nav__link--active::before {
-  width: 80%;
+@media (max-width: 991px) {
+  .nav a {
+    padding: 5px;
+  }
 }
-
-.header__nav__mobile {
-  padding: 50px 5px 30px;
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #fff;
-  border-radius: 0px 0px 25px 25px;
-  z-index: -1;
+@media (max-width: 767px) {
+  .nav a {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    color: #073042;
+  }
+  .nav a::before {
+    display: none;
+  }
 }
-.header__nav__mobile a {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 24px;
-  color: #073042;
+.nav .nav__link--active {
+  border-radius: 10px;
+  background-color: rgb(223, 252, 239);
 }
-.header__nav__mobile .nav__link--active {
+.nav .link--active {
   background-color: rgb(223, 252, 239);
 }
 
-.header__nav__mobile--active {
+.nav__mobile--active {
   display: flex;
   flex-direction: column;
 }
@@ -660,64 +745,6 @@ body {
           user-select: none;
   transition: 0.2s linear;
 }
-.projects__slider__navigation {
-  max-width: 1280px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-.projects__slider__line {
-  width: 100%;
-  height: 4px;
-  background-color: #f2f4f5;
-  border-radius: 4px;
-  overflow: hidden;
-}
-.projects__slider__line .line {
-  max-width: 654px;
-  width: 100%;
-  height: 4px;
-  border-radius: 4px;
-  background-color: #073042;
-  transform: translateX(0%);
-}
-@media (max-width: 991px) {
-  .projects__slider__line .line {
-    max-width: 354px;
-  }
-}
-@media (max-width: 767px) {
-  .projects__slider__line .line {
-    max-width: 232px;
-  }
-}
-.projects__slider__arrows {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 8px;
-}
-.projects__slider__arrows .projects__slider__arrow {
-  border: 0;
-  outline: 0;
-  cursor: pointer;
-  background-color: transparent;
-}
-.projects__slider__arrows .projects__slider__arrow svg {
-  width: 24px;
-  height: 24px;
-}
-.projects__slider__arrows .projects__slider__arrow svg path {
-  fill: #f2f4f5;
-}
-.projects__slider__arrows .prev {
-  transform: rotate(180deg) translateY(4px);
-}
-.projects .projects__slider__arrow--active svg path {
-  fill: #073042;
-}
 .projects .projects__content__block--active {
   max-width: 500px;
   width: 100%;
@@ -870,27 +897,6 @@ body {
     font-size: 20px;
     line-height: 20px;
   }
-}
-.services__slider__card .card__btn {
-  display: flex;
-  gap: 10px;
-  margin-top: 24px;
-  background-color: transparent;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  cursor: pointer;
-}
-.services__slider__card .card__btn .card__btn__text {
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 24px; /* 120% */
-  color: #073042;
-}
-.services__slider__card .card__btn img {
-  width: 24px;
-  height: 24px;
 }
 .services__slider__card .card__content {
   height: 0;

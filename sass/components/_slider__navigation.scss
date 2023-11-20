@@ -1,0 +1,40 @@
+.projects__slider__navigation {
+    max-width: 1280px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .projects__slider__line {
+        width: 100%;
+        height: 4px;
+        background-color: #F2F4F5FF;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+
+    .line {
+        max-width: 654px;
+        width: 100%;
+        height: 4px;
+        border-radius: 4px;
+        background-color: $DarkBlue;
+        transform: translateX(0%); 
+
+        @include tablet {
+            max-width: 354px;
+        }
+
+        @include mobile {
+            max-width: 232px;
+        }
+    }
+
+    .projects__slider__arrows {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;  
+    }
+}

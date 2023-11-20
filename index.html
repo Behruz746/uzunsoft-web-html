@@ -10,29 +10,26 @@
     <!-- Header  -->
     <header class="header">
       <div class="container">
-        <div class="header__body">
+        <div class="header__inner">
           <div class="header__logo">
             <img src="./assets/icons/logo_uzunsoft00.svg" alt="logo" />
           </div>
 
           <!-- mobile menu button -->
-          <div class="header__btn">
-            <button>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-              >
-                <path
-                  d="M16 18V20H5V18H16ZM21 11V13H3V11H21ZM19 4V6H8V4H19Z"
-                  fill="#073042"
-                />
-              </svg>
-            </button>
-          </div>
-
+          <button class="header__btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                d="M16 18V20H5V18H16ZM21 11V13H3V11H21ZM19 4V6H8V4H19Z"
+                fill="#073042"
+              />
+            </svg>
+          </button>
           <!-- mobile menu logo -->
           <div class="header__logo__mobile">
             <svg
@@ -50,21 +47,10 @@
               />
             </svg>
           </div>
-
-          <nav class="header__nav">
-            <a href="/" class="header__nav__link nav__link--active"
-              >Portfolio</a
-            >
-            <a href="/" class="header__nav__link">Xizmatlarimiz</a>
-            <a href="/" class="header__nav__link">Biz haqimizda</a>
-            <a href="/" class="header__nav__link">Bog‘lanish</a>
-          </nav>
-
-          <!-- header__nav__mobile--active -->
-          <nav class="header__nav__mobile">
-            <a href="/" class="header__nav__link nav__link--active"
-              >Portfolio</a
-            >
+          <!-- nav__mobile--active -->
+          <nav class="nav">
+            <!-- nav__link--active -->
+            <a href="/" class="header__nav__link">Portfolio</a>
             <a href="/" class="header__nav__link">Xizmatlarimiz</a>
             <a href="/" class="header__nav__link">Biz haqimizda</a>
             <a href="/" class="header__nav__link">Bog‘lanish</a>
@@ -131,10 +117,9 @@
       <section class="projects section">
         <div class="container">
           <div class="projects__body">
-            <div class="projects__title">
-              <h1 class="section__title">Bizning <span>eng so‘ngi</span> ishlarimizdan</h1>
-            </div>
-
+            <h1 class="section__title">
+              Bizning <span>eng so‘ngi</span> ishlarimizdan
+            </h1>
             <div class="projects__slider__block">
               <div class="projects__slider">
                 <div class="projects__slider__card"></div>
@@ -161,12 +146,16 @@
                 <div class="projects__slider__card"></div>
               </div>
 
-              <div class="projects__slider__navigation">
+              <div
+                class="projects__slider__navigation slider__navigation--projects"
+              >
                 <div class="projects__slider__line">
                   <div class="line"></div>
                 </div>
                 <div class="projects__slider__arrows">
-                  <button class="projects__slider__arrow prev">
+                  <button
+                    class="btn--nav btn--prev"
+                  >
                     <svg
                       width="24"
                       height="24"
@@ -181,7 +170,7 @@
                     </svg>
                   </button>
                   <button
-                    class="projects__slider__arrow projects__slider__arrow--active next"
+                    class="btn__arrow--active btn--nav btn--next"
                   >
                     <svg
                       width="24"
@@ -228,9 +217,8 @@
                     />
                   </div>
                   <h1 class="card__title">Veb va UX/UI dizayn xizmatlari</h1>
-
                   <button type="button" class="card__btn">
-                    <h2 class="card__btn__text">Ko‘proq</h2>
+                    <span class="card__btn__text">Ko‘proq</span>
                     <img
                       src="./assets/icons/drop_down_icon00.svg"
                       alt="card drop down icon"
@@ -255,7 +243,7 @@
                   <h1 class="card__title">Veb va UX/UI dizayn xizmatlari</h1>
 
                   <button type="button" class="card__btn">
-                    <h2 class="card__btn__text">Ko‘proq</h2>
+                    <span class="card__btn__text">Ko‘proq</span>
                     <img
                       src="./assets/icons/drop_down_icon00.svg"
                       alt="card drop down icon"
@@ -297,12 +285,16 @@
                 </div>
               </div>
 
-              <div class="projects__slider__navigation services__slider__navigation">
+              <div
+                class="projects__slider__navigation slider__navigation--services"
+              >
                 <div class="projects__slider__line">
                   <div class="line"></div>
                 </div>
                 <div class="projects__slider__arrows">
-                  <button class="projects__slider__arrow prev">
+                  <button
+                    class="btn--nav btn--prev"
+                  >
                     <svg
                       width="24"
                       height="24"
@@ -317,7 +309,7 @@
                     </svg>
                   </button>
                   <button
-                    class="projects__slider__arrow services__slider__arrow--active next"
+                    class="btn__arrow--active btn--nav btn--next"
                   >
                     <svg
                       width="24"
@@ -355,7 +347,9 @@
                   />
                 </div>
                 <div class="card__content">
-                  <h1 class="card__title section__text">Qulaylik va zamonaviylik uchun</h1>
+                  <h1 class="card__title section__text">
+                    Qulaylik va zamonaviylik uchun
+                  </h1>
                   <p class="card__text">
                     Biz ishlab chiqqan loyihalar jozibali va foydalanuvchilar
                     uchun juda qulaydir. Bu bilan loyihangizga mijozlarni jalb

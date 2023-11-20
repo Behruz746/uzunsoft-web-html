@@ -47,6 +47,7 @@
     }
 }
 
+
 // Info
 .info {
     max-width: 1750px;
@@ -300,77 +301,6 @@
         transition: .2s linear;
     }
 
-    &__slider__navigation {
-        max-width: 1280px;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        // border: 1px solid #d00;
-    }
-
-    &__slider__line {
-        width: 100%;
-        height: 4px;
-        background-color: #F2F4F5FF;
-        border-radius: 4px;
-        overflow: hidden;
-
-        .line {
-            max-width: 654px;
-            width: 100%;
-            height: 4px;
-            border-radius: 4px;
-            background-color: $DarkBlue;
-            transform: translateX(0%); 
-
-            @include tablet {
-                max-width: 354px;
-            }
-
-            @include mobile {
-                max-width: 232px;
-            }
-        }
-    }
-
-    &__slider__arrows {
-        display: flex;
-        width: 100%;
-        align-items: center;
-        justify-content: flex-end;
-        gap: 8px;
-
-        .projects__slider__arrow {
-            border: 0;
-            outline: 0;
-            cursor: pointer;
-            background-color: transparent;
-
-            svg {
-                width: 24px;
-                height: 24px;
-
-                path {
-                    fill: #F2F4F5FF;
-                }
-            }
-        }
-
-        .prev {
-            transform: rotate(180deg) translateY(4px);
-        }
-    }
-
-    // active arrow btn
-    .projects__slider__arrow--active {
-        svg {
-            path {
-                fill: $DarkBlue;
-            }
-        }
-    }
-
     // active 'projects__content__block'
     .projects__content__block--active {
         max-width: 500px;
@@ -526,30 +456,6 @@
                 margin-top: 15px;
                 font-size: 20px;
                 line-height: 20px;
-            }
-        }
-
-        .card__btn {
-            display: flex;
-            gap: 10px;;
-            margin-top: 24px;
-            background-color: transparent;
-            padding: 0;
-            border: 0;
-            outline: 0;
-            cursor: pointer;
-
-            .card__btn__text {
-                font-size: 20px;
-                font-style: normal;
-                font-weight: 600;
-                line-height: 24px; /* 120% */
-                color: $DarkBlue;
-            }
-
-            img {
-                width: 24px;
-                height: 24px;
             }
         }
 

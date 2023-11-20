@@ -38,7 +38,7 @@
         z-index: -5;
     }
     
-    &__body {
+    &__inner {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -81,15 +81,10 @@
         display: none;
         width: 44px;
         height: 44px;
-
-        button {
-            width: 44px;
-            height: 44px;
-            padding: 0;
-            border: 0;
-            outline: 0;
-            background-color: transparent;
-        }
+        padding: 0;
+        border: 0;
+        outline: 0;
+        background-color: transparent;
 
         @include mobile {
             display: block;

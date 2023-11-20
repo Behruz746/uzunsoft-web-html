@@ -1,6 +1,7 @@
-.header__nav {
+.nav {
     display: flex;
     align-items: center;
+    flex-direction: row;
     gap: 40px;
 
     @include tablet {
@@ -8,7 +9,17 @@
     }
     
     @include mobile {
+        // display: none;
+        flex-direction: column;
+        padding: 50px 5px 30px;
         display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        border-radius: 0px 0px 25px 25px;
+        z-index: -1;
     }
 
     a {
@@ -22,10 +33,6 @@
         position: relative;
         overflow: hidden;
         outline: 0;
-
-        @include tablet {
-            padding: 5px;
-        }
 
         &::before {
             content: '';
@@ -44,45 +51,39 @@
                 width: 100% - 20%;
             }
         }
+
+        @include tablet {
+            padding: 5px;
+        }
+
+        @include mobile {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 24px; 
+            color: $DarkBlue;
+            &::before {
+                display: none;
+            }
+        }
     }
     // Active page
     .nav__link--active {
-        &::before {
-            width: 100% - 20%;
-        }
-    }
-}
-
-.header__nav__mobile {
-    padding: 50px 5px 30px;
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #fff;
-    border-radius: 0px 0px 25px 25px;
-    z-index: -1;
-
-    a {
-        width: 100%;
-        padding: 10px;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 24px; 
-        color: $DarkBlue;
-    }
-
-    // active page
-    .nav__link--active {
+        border-radius: 10px;
         background-color: $lightGreen;
     }
+
+    // active page Mobile v
+    .link--active {
+        background-color: $lightGreen;
+    }
+  
 }
 
-// mobile menu active class
-.header__nav__mobile--active {
+  // mobile menu active class
+  .nav__mobile--active {
     display: flex;
     flex-direction: column;
 }
-
