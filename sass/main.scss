@@ -2,7 +2,6 @@
 @import './abstracts/mixins';
 @import './abstracts/variables';
 
-
 // Base
 @import './base/base';
 @import './base/fonts';
@@ -15,6 +14,7 @@
 
 // Layout
 @import './layout/footer';
+@import './layout/form';
 @import './layout/header';
 @import './layout/nav';
 
