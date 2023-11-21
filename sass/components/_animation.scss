@@ -1,0 +1,50 @@
+.coming__soon {
+    width: 100%;
+    background-color: $green;
+
+    .coming__soon__inner {
+        display: flex;
+        align-items: center;
+        gap: 60px;
+        width: 1290px;
+        margin: 0 auto;
+        transform: translateX(0px);
+
+        @include mobile {
+            gap: 50px;
+        }
+    }
+
+    .coming__soon__item {
+        display: flex;
+        align-items: center;
+        gap: 60px;
+        padding: 5px;
+
+        @include mobile {
+            gap: 50px;
+        }
+
+        img {
+            width: 24px;
+            height: 24px;
+
+            @include mobile {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        h2 {
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            color: #fff;
+
+            @include mobile {
+                font-size: 16px;
+            }
+        }
+    }
+}

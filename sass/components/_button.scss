@@ -1,0 +1,94 @@
+.btn {
+    max-width: 208px;
+    width: 100%;
+    padding: 11px 25px;
+    border-radius: 25px;
+    border: 1px solid $DarkBlue;
+    outline: 0;
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+
+    span {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 24px;
+        color: #060505;
+        z-index: 5;
+        position: relative;
+    }
+
+    &::after {
+        content: '';
+        width: 0px;
+        height: 100%;
+        background-color: $lightGreen;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1; 
+        transition: .4s ease-in-out;   
+    }
+    
+    &:hover {
+        &::after {
+            width: 100%;
+        }
+    }
+}
+
+.card__btn {
+    display: flex;
+    gap: 10px;;
+    margin-top: 24px;
+    background-color: transparent;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+
+    .card__btn__text {
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 24px;
+        color: $DarkBlue;
+    }
+
+    img {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+.btn--nav {
+    display: block;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    background-color: transparent;
+
+    svg {
+        width: 24px;
+        height: 24px;
+            
+        path {
+            fill: #F2F4F5FF;
+        }
+    }
+}
+
+.btn--prev {
+    transform: rotate(180deg) translateY(4px);
+}
+
+// active arrow btn
+.btn__arrow--active {
+    svg {
+        path {
+            fill: $DarkBlue;
+        }
+    }
+}

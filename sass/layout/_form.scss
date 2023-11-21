@@ -1,0 +1,64 @@
+// Form //
+.form {
+    max-width: 395px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+    padding: 0 20px;
+}
+
+.form__box {
+    display: block;
+    border-bottom: 1px solid $DarkBlue;
+    position: relative;
+    cursor: text;
+    
+    @include mobile {
+       width: 100%;
+    }
+
+    .form__input {
+        max-width: 395px;
+        width: 100%;
+        border: 0;  
+        outline: 0;
+        padding-bottom: 10px;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 32px;
+        color: $DarkBlue;
+
+        @include mobile {
+            font-size: 16px;
+            line-height: 16px;
+        }
+    }
+
+    .form__label {
+        max-width: 395px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 32px;
+        color: $DarkBlue;
+        transition: all  0.3s ease;
+
+        @include mobile {
+            font-size: 16px;
+            line-height: 16px;
+        }
+    }
+
+    .form__input:focus ~ .form__label, 
+    .form__input:not(:placeholder-shown).form__input:not(:focus) ~ .form__label {
+        top: -20px !important;
+        font-size: 12px !important;
+        line-height: 26px;
+        opacity: 0.5;
+    }       
+}
